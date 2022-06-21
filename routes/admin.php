@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', '\App\Http\Controllers\HomeController@index')->name('home');
-Route::post('/add', '\App\Http\Controllers\HomeController@addUrl')->name('add');
+Auth::routes(['register' => false]);
 
+Route::get('/', '\App\Http\Controllers\Admin\AdminController@index')->middleware('auth');
